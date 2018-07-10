@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<header>
+  <% include ./partials/_header %>
+</header>
+<body>
+    <!-- Add your EJS code here -->
+    <% for(var url in urls) { %>
+        <li><%= url %></li>
+    <% } %>
+</body>
+</html>

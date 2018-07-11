@@ -3,12 +3,16 @@
 <head>
 </head>
 <header>
-  <% include ./partials/_header %>
 </header>
 <body>
-    <!-- Add your EJS code here -->
     <% for(var url in urls) { %>
-        <li><%= url %></li>
+       <p><%= url %>: <%= urls[url]%></p>
+       <a href="/urls/<%=url%>/">Edit</a>
+       <form action="/urls/<%= url %>/delete" method="POST";"><button>Delete</button>
+       </form>
     <% } %>
 </body>
 </html>
+
+
+

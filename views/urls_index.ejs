@@ -3,10 +3,11 @@
 <head>
 </head>
 <header>
+  <% include ./partials/_header %>
 </header>
 <body>
     <% for(var url in urls) { %>
-       <p><%= url %>: <%= urls[url]%></p>
+       <p><strong><%= url %></strong>: <%= urls[url]%></p>
        <a href="/urls/<%=url%>/">Edit</a>
        <form action="/urls/<%= url %>/delete" method="POST";"><button>Delete</button>
        </form>

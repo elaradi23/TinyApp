@@ -1,14 +1,18 @@
 <div>
-  <% if(!username){ %>
-    <form action="/login" method="POST">
-      <input id="username" type="text" name="username" style="width: 300px">
-      <input type="submit" value="Submit">
-    </form>
-  <% } else{ %>
-    <form action="/logout" method="POST">
-    <dev><%= username %>
-      <button>Delete</button>
+  <% if(users[user_id]){ %>
+  <form action="/logout" method="POST">
+    <dev class="font-italic"><%=users[user_id].email %>
+      <button>Log Out</button>
     </dev>
+  </form>
+  <% } else {%>
+  <div>
+    <form action="/headToRegister" method="POST">
+      <button>Register</button>
     </form>
+    <form action="/headTologin" method="POST">
+      <button>Log in</button>
+    </form>
+  </div>
   <% } %>
 </div>

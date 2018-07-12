@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
 </head>
+</head>
 <header>
   <% include ./partials/_header %>
 </header>
 <body>
     <!-- Add your EJS code here -->
+    <dev>
     <h1>ShortURL: <strong><%=shortURL%></strong></h1>
     <form action="/urls/<%= shortURL %>/update" method="POST">
       <input id="longURL" type="text" name="longURL" placeholder=<%=longURL%> style="width: 300px">
       <input type="submit" value="Update">
+    </dev>
   </form>
 </body>
 </html>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 </head>
 <header>
   <% include ./partials/_header %>
 </header>
 <body>
-  <div style='padding: 15px;'>
+  <div style='padding: 15px; font-family: Sans-serif;'>
     <label for="longURL">Enter a URL:</label>
-    <span>https://</span>
-    <form style='padding: 5px;' action="/urls" method="POST">
-      <input type="text" id="longURL" name="longURL" placeholder="example.com" style="width: 300px;">
+    <form action="/urls" method="POST">
+      <input type="text" id="longURL" name="longURL" placeholder="http://example.com" style="width: 300px;">
       <button>Submit</button>
     </form>
   </div>

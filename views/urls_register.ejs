@@ -6,15 +6,15 @@
 <header>
   <% include ./partials/_header %>
 </header>
-<body>
+<body style="font-family: Sans-serif;">
   <div>
       <h3>Register</h3>
       <form action="/register" method="POST">
         <div class="form-group">
-         <label for="user" style="float: left; margin-right: 40px">Email:</label>
+         <label for="user" style="float: left; margin-right: 45px">Email:</label>
          <p><input type="email" id ="user" name="email" placeholder="example@email.com"></p>
        </div>
-       <label for="passowrd" style="float: left; margin-right: 17px">Password:</label>
+       <label for="passowrd" style="float: left; margin-right: 15px">Password:</label>
        <p><input type="password" id="passwrd" name="password" placeholder="******"></p>
        <input type="submit" value="Register">
      </form>

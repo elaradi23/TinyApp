@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
 </head>
-</head>
 <header>
   <% include ./partials/_header %>
 </header>
 <body>
-  <dev>
-    <h1>ShortURL: <strong><%=shortURL%></strong></h1>
+  <div style='padding-top: 15px; font-family: Sans-serif;'>
+    <label style="padding-top: 15px;">ShortURL: <strong><%=shortURL%></strong></label>
     <form action="/urls/<%= shortURL %>" method="POST">
       <input style="width: 300px" id="longURL" type="text" name="longURL" placeholder=<%=longURL%>>
       <input type="submit" value="Update">
-      <p>Date Created: <%= dateCreated%></p>
+      <p style="font-family: Sans-serif; font-style: italic;">Date Created: <%= dateCreated%></p>
     </dev>
     <div>
   </form>

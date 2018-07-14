@@ -12,17 +12,6 @@ app.use(cookieSession({
   keys: ['key'],
 }))
 
-app.use(function (req, res, next) {
-  console.log(req.method + ": " + req.path);
-  console.log(req.cookies);
-  console.log('USERS:');
-  console.log(users);
-  console.log('URL DATABASE:');
-  console.log(urlDatabase);
-  console.log('###########################');
-  next();
-});
-
 var PORT = 3000;
 app.set("view engine", "ejs");
 
@@ -56,7 +45,6 @@ const users = {
 
 //__________________________________________________________
 
-//
 app.get("/", (req, res) => {
   const userID = req.session.user_id;
   if(!userExists(userID)){
@@ -73,8 +61,6 @@ app.get("/urls/", (req, res) => {
   if(!userExists(userID)){
     res.status(400).send("DICIDE THID LATER");
   } else {
-    //req.session = null;
-    // let tempURLS = urlsForUser(userID);
     let templateVars = {urls: urlDatabase, user: users[userID], users};
     res.render("urls_index", templateVars);
   }

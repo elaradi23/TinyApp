@@ -59,7 +59,7 @@ app.get("/", (req, res) => {
 app.get("/urls/", (req, res) => {
   const userID = req.session.user_id;
   if(!userExists(userID)){
-    res.status(400).send("DICIDE THID LATER");
+    res.status(400).send("Forbidden: You don't have permission to access");
   } else {
     let templateVars = {urls: urlDatabase, user: users[userID], users};
     res.render("urls_index", templateVars);
@@ -69,7 +69,6 @@ app.get("/urls/", (req, res) => {
 // Page to take a new url
 app.get("/urls/new", (req, res) => {
   const userID = req.session.user_id;
-  console.log(userID);
   if (!userID) {
     res.redirect("/login/");
   } else {
@@ -83,15 +82,12 @@ app.post("/urls", (req, res) => {
   const userID = req.session.user_id;
 
   shortURL = generateRandomString();
-  console.log(shortURL);
   longURL = req.body["longURL"];
-
-  let templateVars = {shortURL, longURL};
 
   var today = new Date();
   let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-  urlDatabase[shortURL] = {templateVars, userID, date};
+  urlDatabase[shortURL] = {shortURL, longURL, userID, date};
   res.redirect("/urls/" + shortURL);
 });
 
@@ -179,8 +175,16 @@ app.post('/logout', (req, res) => {
 // Sends a GET request to page
 app.get('/register', (req,res) =>{
   const userID = req.session.user_id;
-  let templateVars = {urls: urlDatabase, user: users[userID], users}
-  res.render("urls_register", templateVars);
+  if (!userID) {
+    let templateVars = {urls: urlDatabase, user: users[userID], users}
+    res.render("urls_register", templateVars);
+  } else {
+    res.redirect("/urls");
+  }
+
+  // const userID = req.session.user_id;
+  // let templateVars = {urls: urlDatabase, user: users[userID], users}
+  // res.render("urls_register", templateVars);
 });
 
 // Handles a POST request to add new user info:

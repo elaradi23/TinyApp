@@ -10,9 +10,10 @@
     <!-- Add your EJS code here -->
     <dev>
     <h1>ShortURL: <strong><%=shortURL%></strong></h1>
-    <form action="/urls/<%= shortURL %>/update" method="POST">
-      <input id="longURL" type="text" name="longURL" placeholder=<%=longURL%> style="width: 300px">
+    <form action="/urls/<%= shortURL %>" method="POST">
+      <input style="width: 300px" id="longURL" type="text" name="longURL" placeholder=<%=longURL%>>
       <input type="submit" value="Update">
+      <p>Date Created: <%= dateCreated%></p>
     </dev>
   </form>
 </body>

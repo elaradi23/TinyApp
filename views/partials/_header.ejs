@@ -1,18 +1,17 @@
 <div>
-  <% if(users[user_id]){ %>
+  <% if(user){ %>
   <form action="/logout" method="POST">
-    <dev class="font-italic"><%=users[user_id].email %>
+    <div><%=user.email %>
       <button>Log Out</button>
-    </dev>
+    </div>
   </form>
   <% } else {%>
-  <div>
-    <form action="/headToRegister" method="POST">
-      <button>Register</button>
+    <form action='/register' method="GET">
+      <button style="float: left">Register</button>
     </form>
-    <form action="/headTologin" method="POST">
+    <form action="/login" method="GET">
       <button>Log in</button>
     </form>
-  </div>
   <% } %>
+  <hr>
 </div>

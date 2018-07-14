@@ -5,17 +5,11 @@
   <% include ./partials/_header %>
 </header>
 <body>
-<!--   <form action="/urls/new" method="POST" style="margin:150px;">
-      <label for="longURL">Enter a URL:</label>
-      <div><input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px"><input type="submit" value="Submit" class=""></div>
-  </form> -->
-<label for="longURL">Enter a URL:</label>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">https://</span>
+    <label for="longURL">Enter a URL:</label>
+    <span>https://</span>
+    <form action="/urls" method="POST">
+      <input type="text" aria-describedby="basic-addon3" id="longURL" name="longURL" placeholder="example.com" style="width: 300px">
+      <button>Submit</button>
+    </form>
   </div>
-  <form action="/urls/new" method="POST">
-  <input type="text" class="form-control" aria-describedby="basic-addon3" id="longURL" name="longURL" placeholder="example.com" style="width: 300px">
-</form>
-</div>
 </body>

@@ -1,4 +1,4 @@
-<div>
+<div style="background-color: lightblue; padding: 10px; border-radius: 5px;">
   <% if(user){ %>
   <form action="/logout" method="POST">
     <div><%=user.email %>
@@ -13,5 +13,4 @@
       <button>Log in</button>
     </form>
   <% } %>
-  <hr>
 </div>

@@ -5,10 +5,11 @@
   <% include ./partials/_header %>
 </header>
 <body>
+  <div style='padding: 15px;'>
     <label for="longURL">Enter a URL:</label>
     <span>https://</span>
-    <form action="/urls" method="POST">
-      <input type="text" aria-describedby="basic-addon3" id="longURL" name="longURL" placeholder="example.com" style="width: 300px">
+    <form style='padding: 5px;' action="/urls" method="POST">
+      <input type="text" id="longURL" name="longURL" placeholder="example.com" style="width: 300px;">
       <button>Submit</button>
     </form>
   </div>

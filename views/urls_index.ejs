@@ -10,7 +10,6 @@
     <% for(var url in urls) { %>
       <%if (user["id"] === urls[url]['userID']){%>
         <p><a href="/u/<%=url%>/"><%=url%></a>: <%= urls[url].longURL%></p>
-        <p>Date Created: <%= urls[url].date%></p>
         <div style="float: left">
         <form  action="/urls/<%=url%>" method="GET">
           <input type="submit" value="Edit">
@@ -25,7 +24,7 @@
       <% } %>
     <% } %>
       <form action="/urls/new" method="GET">
-      <button style="margin-top:20px;">Add URL!</button>
+      <button style="margin-top:20px; width:250px; float: right; position: relative; left: -50%;">Add URL!</button>
     </form>
   <% } %>
 </body>

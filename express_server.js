@@ -10,9 +10,20 @@ app.use(cookieParser());
 app.use(cookieSession({
   name: 'session',
   keys: ['key'],
-}))
+}));
 
-var PORT = 3000;
+app.use(function (req, res, next) {
+  console.log(req.method + ": " +req.path);
+  console.log(req.cookies);
+  console.log('- - - - - - - - - - - - - -');
+  console.log(users);
+  console.log('- - - - - - - - - - - - - -');
+  console.log(urlDatabase);
+  console.log('###########################');
+  next();
+});
+
+var PORT = 8080;
 app.set("view engine", "ejs");
 
 var urlDatabase = {

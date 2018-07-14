@@ -7,14 +7,14 @@
   <% include ./partials/_header %>
 </header>
 <body>
-    <!-- Add your EJS code here -->
-    <dev>
+  <dev>
     <h1>ShortURL: <strong><%=shortURL%></strong></h1>
     <form action="/urls/<%= shortURL %>" method="POST">
       <input style="width: 300px" id="longURL" type="text" name="longURL" placeholder=<%=longURL%>>
       <input type="submit" value="Update">
       <p>Date Created: <%= dateCreated%></p>
     </dev>
+    <div>
   </form>
 </body>
 </html>
